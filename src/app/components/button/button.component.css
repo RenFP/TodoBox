@@ -1,0 +1,26 @@
+.btn{
+    cursor: pointer;
+    background-color: #1550F7;   
+    width: 220px;
+    height: 38px;
+    border: none;
+    border-radius: 5px;    
+    font-weight: 500;
+}
+
+
+.btn.blue{    
+    background-color: #1550F7;  
+    color: #FFFFFF;
+}
+.btn.white{    
+    background-color: #FFFFFF; 
+    color: #333333; 
+    border: 1px solid #d3d3d3;
+    
+}
+
+.btn:hover {
+opacity: 90%;
+
+}

@@ -1,0 +1,8 @@
+<div class="list-container" *ngFor="let item of todoList; let i = index">
+    <app-todo-item 
+    [nameTask]="item.name" 
+    [dateTask]="item.dateTask" 
+    [timeTask]="item.timeTask"
+    [emojiTask]="item.emojiTask" 
+    [idNumber]="i" />
+</div>
