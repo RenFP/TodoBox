@@ -1,0 +1,19 @@
+<button class="button-area" (click)="showDialog()" label="Show"><span>&#x002B;</span></button>
+
+<p-dialog class="flex items-center gap-4 mb-4" [(visible)]="visible" [modal]="true" [style]="{ width: '25rem' }">
+    <ng-template #header>
+        <h3>Adicione uma Tarefa</h3>
+    </ng-template>
+    <div class="modal-container">
+        <input pInputText [(ngModel)]="inputName" type="text" pSize="large" placeholder="Nome da tarefa" />
+        <p-datepicker [(ngModel)]="rangeDate" [showIcon]="true" inputId="buttondisplay" [showOnFocus]="false"
+            selectionMode="range" [readonlyInput]="true" />
+
+        <div class="time-container">
+            <p-datepicker inputId="calendar-timeonly" [(ngModel)]="startTime" [timeOnly]="true"
+                placeholder="Início da tarefa" [readonlyInput]="true"/>
+            <p-datepicker inputId="calendar-timeonly" [(ngModel)]="endTime" [timeOnly]="true"
+                placeholder="Fim da tarefa" [readonlyInput]="true"/>
+        </div>
+    </div>
+</p-dialog>

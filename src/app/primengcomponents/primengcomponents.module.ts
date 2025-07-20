@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DialogFormComponent } from './dialog-form/dialog-form.component';
 import { Dialog } from 'primeng/dialog';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
@@ -9,8 +8,10 @@ import { DatePickerModule } from 'primeng/datepicker';
 import { FormsModule } from '@angular/forms';
 
 
+
+
 @NgModule({
-  declarations: [DialogFormComponent],
+  declarations: [],
   imports: [
     CommonModule,
     Dialog,
@@ -20,7 +21,8 @@ import { FormsModule } from '@angular/forms';
     DatePickerModule,
     FormsModule
   ],
-  exports: [DialogFormComponent, CommonModule,
+  exports: [
+    CommonModule,
     Dialog,
     ButtonModule,
     InputTextModule,

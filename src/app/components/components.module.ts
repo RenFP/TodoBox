@@ -4,13 +4,11 @@ import { SideBarComponent } from './side-bar/side-bar.component';
 import { TodoItemComponent } from './todo-item/todo-item.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { HeaderComponent } from './header/header.component';
-import { ModalNewTaskComponent } from './modal-new-task/modal-new-task.component';
 import { ButtonComponent } from './button/button.component';
 import { CheckboxComponent } from './checkbox/checkbox.component';
-import { DatePickerModule } from 'primeng/datepicker';
-import { FormsModule } from '@angular/forms';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PrimengcomponentsModule } from '../primengcomponents/primengcomponents.module';
+import { DialogFormComponent } from './dialog-form/dialog-form.component';
+
 
 
 
@@ -22,21 +20,19 @@ import { PrimengcomponentsModule } from '../primengcomponents/primengcomponents.
     TodoItemComponent,
     TodoListComponent,
     HeaderComponent,
-    ModalNewTaskComponent,
     ButtonComponent,
     CheckboxComponent,
-
-
+    DialogFormComponent
   ],
-  imports: [CommonModule, DatePickerModule, FormsModule, BrowserAnimationsModule, PrimengcomponentsModule],
+  imports: [CommonModule, PrimengcomponentsModule],
   exports: [
     SideBarComponent,
     TodoItemComponent,
     TodoListComponent,
     HeaderComponent,
-    ModalNewTaskComponent,
     ButtonComponent,
     CheckboxComponent,
+    DialogFormComponent
   ],
 })
 export class ComponentsModule { }

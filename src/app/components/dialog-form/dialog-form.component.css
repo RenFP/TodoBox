@@ -16,3 +16,14 @@
 .button-area:hover {
   font-size: 35px;
 }
+
+.modal-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.time-container{
+  display: flex;
+  gap: 10px;
+}

@@ -8,6 +8,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { providePrimeNG } from 'primeng/config';
 import Aura from '@primeuix/themes/aura';
 
+
 @NgModule({
   declarations: [
     AppComponent
@@ -16,7 +17,7 @@ import Aura from '@primeuix/themes/aura';
     BrowserModule,
     AppRoutingModule,
     ComponentsModule,
-  ],
+],
   providers: [
     provideAnimationsAsync(),
     providePrimeNG({
