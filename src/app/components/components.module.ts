@@ -10,7 +10,8 @@ import { CheckboxComponent } from './checkbox/checkbox.component';
 import { DatePickerModule } from 'primeng/datepicker';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { DatepickerComponent } from './modal-new-task/datepicker/datepicker.component';
+import { PrimengcomponentsModule } from '../primengcomponents/primengcomponents.module';
+
 
 
 
@@ -24,11 +25,10 @@ import { DatepickerComponent } from './modal-new-task/datepicker/datepicker.comp
     ModalNewTaskComponent,
     ButtonComponent,
     CheckboxComponent,
-    DatepickerComponent,
 
 
   ],
-  imports: [CommonModule, DatePickerModule, FormsModule, BrowserAnimationsModule],
+  imports: [CommonModule, DatePickerModule, FormsModule, BrowserAnimationsModule, PrimengcomponentsModule],
   exports: [
     SideBarComponent,
     TodoItemComponent,

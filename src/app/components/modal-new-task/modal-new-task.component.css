@@ -12,6 +12,7 @@
   padding-bottom: 2px;
   font-size: 25px;
 }
+
 .button-area:hover {
   font-size: 35px;
 }
@@ -24,14 +25,14 @@
   bottom: 80px;
   border-radius: 15px;
   background-color: #ffffff;
-  overflow: hidden;
   padding: 10px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .modal-new-task.fadein {
-  animation: fadeIn 0.5s;          
+  animation: fadeIn 0.5s;
 }
+
 .modal-new-task.fadeout {
   animation: fadeOut 0.5s;
 }
@@ -67,10 +68,29 @@ input {
   border: 1px solid #eaeaea;
   border-radius: 10px;
 }
+
 .backgound-model {
   position: absolute;
   top: 0;
   right: 0;
-  width: 81%;
+  width: 100%;
   height: 90%;
+  backdrop-filter: blur(1.5px);
+  transition:  ease-in 1s;
+  
+  
+}
+
+.time-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 10px;
+  
+
+}
+
+.date-container {
+  height: 39px;
+  width: 100%;
+  padding: 0 10px;
 }

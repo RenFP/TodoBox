@@ -7,9 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./modal-new-task.component.css'],
 })
 export class ModalNewTaskComponent {
-  modalVisible = true;
+  modalVisible = false;
   fadeStatus = false;
-  
+  inputName = '';
+  startTime = '';
+  endTime = '';
+  rangeDate = '';
+
 
   toogleModal() {
     this.fadeStatus = !this.fadeStatus;

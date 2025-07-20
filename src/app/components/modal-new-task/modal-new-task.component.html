@@ -1,15 +1,21 @@
 <button (click)="toogleModal()" class="button-area">
     <span>&#x002B;</span>
-
 </button>
-
+<app-dialog-form></app-dialog-form>
 <div class="backgound-model" *ngIf="modalVisible" (click)="toogleModal()"></div>
 <div class="modal-new-task" [class]="fadeStatus ? 'fadein' : ' fadeout'" *ngIf="modalVisible">
     <div class="modal-container">
         <h3 class="modal-title">Adicione uma Tarefa</h3>
-        <input class="name-task" placeholder="Nome da tarefa">
-        <app-datepicker></app-datepicker>
 
+        <input pInputText [(ngModel)]="inputName" type="text" pSize="large" placeholder="Nome da tarefa" />
+        <p-datepicker class="date-container" [(ngModel)]="rangeDate" size="large" placeholder="Data" showIcon
+            iconDisplay="input" selectionMode="range" [readonlyInput]="true" />
+        <div class="time-container">
+            <p-datepicker inputId="calendar-timeonly" [(ngModel)]="startTime" [timeOnly]="true"
+                placeholder="Início da tarefa" />
+            <p-datepicker inputId="calendar-timeonly" [(ngModel)]="endTime" [timeOnly]="true"
+                placeholder="Fim da tarefa" />
+        </div>
         <div class="btn-container">
             <app-button [color]="'white' " [btnName]="'Canelar'" />
             <app-button [btnName]="'Adicionar'" />
