@@ -3,15 +3,12 @@
 
 </button>
 
- 
 <div class="backgound-model" *ngIf="modalVisible" (click)="toogleModal()"></div>
 <div class="modal-new-task" [class]="fadeStatus ? 'fadein' : ' fadeout'" *ngIf="modalVisible">
     <div class="modal-container">
         <h3 class="modal-title">Adicione uma Tarefa</h3>
         <input class="name-task" placeholder="Nome da tarefa">
-        <input class="name-task" placeholder="Nome da tarefa">
-        <input class="name-task" placeholder="Nome da tarefa">
-
+        <app-datepicker></app-datepicker>
 
         <div class="btn-container">
             <app-button [color]="'white' " [btnName]="'Canelar'" />
