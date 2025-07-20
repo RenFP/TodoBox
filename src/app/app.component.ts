@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { GetTodoList } from './data/todoslist';
 import { ITodoItem } from './interfaces/todoitem';
+import { TodoService } from './data/todoservice';
 
 @Component({
   selector: 'app-root',
@@ -11,11 +12,15 @@ import { ITodoItem } from './interfaces/todoitem';
 export class AppComponent {
   todoList: ITodoItem[] = [];
 
+
+  constructor(private todoService: TodoService) {
+  }
+
   ngOnInit() {
-    GetTodoList().then((data) => {
+    this.todoService.getTodoList().then((data) => {
       this.todoList = data as ITodoItem[];
     });
   }
 
-  
+
 }
