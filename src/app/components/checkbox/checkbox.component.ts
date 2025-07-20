@@ -7,5 +7,5 @@ import { Component, Input } from '@angular/core';
   styleUrl: './checkbox.component.css'
 })
 export class CheckboxComponent {
-  @Input() idNumber:number= 0;
+  @Input() idNumber:number | undefined = 0;
 }
