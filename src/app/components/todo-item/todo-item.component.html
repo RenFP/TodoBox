@@ -1,6 +1,11 @@
 <div class="todo-item">
-    <div class="check-box"><app-checkbox [idNumber]="idNumber" /></div>
-    <div class="task-name"> {{nameTask}} <span>{{emojiTask}}</span></div>
-    <div class="time-task"> {{timeTask}} </div>
-    <div class="edit-button"> &#65049; </div>
+    <div class="check-box">
+        <app-checkbox (checkedChange)="onCheckedChange.emit(todoItem?.id)" [checked]="todoItem?.status === 'completed'" [idNumber]="todoItem?.id">
+        </app-checkbox>
+    </div>
+    <div class="task-name" [ngClass]="{'task-name-terminated': todoItem?.status === 'completed'}"> {{ todoItem?.name }}
+        <span>{{ todoItem?.emojiTask }}</span></div>
+    <div class="time-task"> {{ todoItem?.startTask | clock }} - {{ todoItem?.endTask | clock }} </div>
+    <div class="edit-button"> &#65049;
+    </div>
 </div>

@@ -19,6 +19,9 @@
   font-weight: 500;
   font-size: 18px;
 }
+.task-name-terminated {
+  text-decoration: line-through;
+}
 .time-task {
   flex-grow: 0;
   background-color: #f3f3f3;

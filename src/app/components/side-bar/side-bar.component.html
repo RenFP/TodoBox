@@ -2,21 +2,16 @@
     <h2 class="menu-title">Categoria</h2>
     <div class="menu-list">
 
-        <div class="menu-item">
+        <div class="menu-item" (click)="setFilter('pending')">
             <span>O</span>
-            <span style="flex-grow: 1;">Estudos</span>
-            <span class="menu-item-counter">20</span>
+            <span style="flex-grow: 1;">Pendentes</span>
+            <span class="menu-item-counter">{{counter[0]}}</span>
         </div>
-        <div class="menu-item-highlighted">
+        <div class="menu-item-highlighted" (click)="setFilter('completed')">
             <span>O</span>
-            <span style="flex-grow: 1;">Casa</span>
-            <span class="menu-item-counter-highlighted">20</span>
-        </div>
-        <div class="menu-item">
-            <span>O</span>
-            <span style="flex-grow: 1;">Profissional</span>
-            <span class="menu-item-counter">20</span>
-        </div>
+            <span style="flex-grow: 1;">Finalizados</span>
+            <span class="menu-item-counter-highlighted">{{counter[1]}}</span>
+        </div>  
 
     </div>
 

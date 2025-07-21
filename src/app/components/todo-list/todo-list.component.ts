@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ITodoItem } from '../../interfaces/todoitem';
 
 @Component({
@@ -9,4 +9,5 @@ import { ITodoItem } from '../../interfaces/todoitem';
 })
 export class TodoListComponent {
   @Input() todoList: ITodoItem[] = [];
+  @Output() onCheckedChange = new EventEmitter<number>()
 }

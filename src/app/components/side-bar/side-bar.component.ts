@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-side-bar',
@@ -7,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./side-bar.component.css']
 })
 export class SideBarComponent {
+  @Output() onFilterTodoList = new EventEmitter<string>();
+  @Input() counter: number[] = [0, 0];
 
+  selectedFilter: string = 'pending'; // Valor inicial
+
+  setFilter(filter: string) {
+    this.selectedFilter = filter;
+    this.onFilterTodoList.emit(filter);
+  }
 }

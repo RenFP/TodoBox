@@ -1,4 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ITodoItem } from '../../interfaces/todoitem';
+
 
 @Component({
   selector: 'app-todo-item',
@@ -7,9 +9,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./todo-item.component.css'],
 })
 export class TodoItemComponent {
-  @Input() emojiTask: string | undefined = ''
-  @Input() nameTask: string | undefined = 'Tarefa...';
-  @Input() dateTask: string | undefined = '2025-07-24T00:00:00.000Z';
-  @Input() timeTask: string | undefined = '08.00 - 07.00';
-  @Input() idNumber:number | undefined= 0;
+  @Input() todoItem: ITodoItem | undefined = undefined;
+  @Output() onCheckedChange = new EventEmitter<number>()
 }

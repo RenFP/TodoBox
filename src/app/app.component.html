@@ -1,11 +1,11 @@
 <main class="main-container">
   <div class="left-container">
-    <app-side-bar></app-side-bar>
+    <app-side-bar (onFilterTodoList)="filterTodoList($event)" [counter]="counter"></app-side-bar>
   </div>
   <div class="right-container">
     <button (click)="toggleDarkMode()">Toggle Dark Mode</button>
     <app-header></app-header>
-    <app-todo-list [todoList]="todoList"></app-todo-list>
-  </div>  
-  <app-dialog-form></app-dialog-form>
+    <app-todo-list [todoList]="todoListFiltered" (onCheckedChange)="terminateTask($event)"></app-todo-list>
+  </div>
+  <app-dialog-form (onAddTask)="addTask($event)"></app-dialog-form>
 </main>

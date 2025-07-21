@@ -9,15 +9,16 @@ import { providePrimeNG } from 'primeng/config';
 import Aura from '@primeuix/themes/aura';
 
 
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ComponentsModule,
-],
+  ],
   providers: [
     provideAnimationsAsync(),
     providePrimeNG({

@@ -8,10 +8,7 @@ import { ButtonComponent } from './button/button.component';
 import { CheckboxComponent } from './checkbox/checkbox.component';
 import { PrimengcomponentsModule } from '../primengcomponents/primengcomponents.module';
 import { DialogFormComponent } from './dialog-form/dialog-form.component';
-
-
-
-
+import { PipesModule } from '../pipes/pipes.module';
 
 
 @NgModule({
@@ -22,9 +19,9 @@ import { DialogFormComponent } from './dialog-form/dialog-form.component';
     HeaderComponent,
     ButtonComponent,
     CheckboxComponent,
-    DialogFormComponent
+    DialogFormComponent,
   ],
-  imports: [CommonModule, PrimengcomponentsModule],
+  imports: [CommonModule, PrimengcomponentsModule, PipesModule],
   exports: [
     SideBarComponent,
     TodoItemComponent,
