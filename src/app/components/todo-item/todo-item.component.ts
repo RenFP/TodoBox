@@ -13,7 +13,7 @@ export class TodoItemComponent {
   @Input() todoItem: ITodoItem = {} as ITodoItem;
   @Output() onCheckedChange = new EventEmitter<number>()
   @Output() onEdit = new EventEmitter<ITodoItem>()
-
+  @Output() onDelete = new EventEmitter<number>()
   showDialog(item?: ITodoItem) {
     this.visible = true;    
   }

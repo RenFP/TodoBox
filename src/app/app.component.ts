@@ -29,22 +29,32 @@ export class AppComponent {
     this.selectedItem = dados;
     this.visible = true
   }
-  addTask(dados: ITodoItem) {    
+  addTask(dados: ITodoItem) {
     this.todoService.addTodoItem(dados);
-    console.log( dados.dateTask);  //CORRIGIR PIPE DATE
     this.todoList.push(dados);
     this.updateFilteredList();
   }
   terminateTask(id: number) {
-    this.todoService.terminateTodoItem(id);
+    const item = this.todoList.find(item => item.id === id);
+    if (item?.status === 'pending') {
+      this.todoService.terminateTodoItem(id);
+      this.updateFilteredList();
+    } else {
+      item!.status = 'pending';
+      this.todoService.updateTodoItem(item!);
+      this.updateFilteredList();
+    }
+  }
+  deleteTask(id: number) {
+    this.todoService.deleteTodoItem(id);
     this.updateFilteredList();
   }
-  
+
   filterTodoList(status: string) {
     this.currentFilter = status;
     this.updateFilteredList();
   }
-  editTask(dados: ITodoItem) {    
+  editTask(dados: ITodoItem) {
     this.todoService.updateTodoItem(dados);
     this.updateFilteredList();
   }

@@ -32,4 +32,10 @@ export class TodoService {
         const index = this.data.findIndex(item => item.id === id);
         this.data[index].status = 'completed';
     }
+    deleteTodoItem(id: number) {
+        const index = this.data.findIndex(item => item.id === id);
+        if (index !== -1) {
+            this.data.splice(index, 1);
+        }
+    }
 }

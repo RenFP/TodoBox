@@ -7,8 +7,11 @@
     <div class="task-name" [ngClass]="{'task-name-terminated': todoItem.status === 'completed'}"> {{ todoItem.name }}
     </div>
     <div class="time-task"> {{ todoItem.startTask | clock }} - {{ todoItem.endTask | clock }} </div>
-    <div class="time-task"> {{ todoItem.dateTask }} </div>
-    <div (click)="onEdit.emit(todoItem)" class="edit-button"> &#65049;  
+    <div class="time-task"> {{ todoItem.dateTask | dateRange }} </div>
+    <div (click)="onEdit.emit(todoItem)" class="edit-button"> &#x270E;  
+        <app-dialog [item]="todoItem"></app-dialog>
+    </div>
+    <div (click)="onDelete.emit(todoItem.id)" class="delete-button"> &#x2715;  
         <app-dialog [item]="todoItem"></app-dialog>
     </div>
 </div>

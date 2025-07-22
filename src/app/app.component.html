@@ -5,7 +5,7 @@
   <div class="right-container">
 
     <app-header></app-header>
-    <app-todo-list [todoList]="todoListFiltered" (onCheckedChange)="terminateTask($event)" (onEdit)="showDialog($event)"></app-todo-list>
+    <app-todo-list [todoList]="todoListFiltered" (onCheckedChange)="terminateTask($event)" (onEdit)="showDialog($event)" (onDelete)="deleteTask($event)"></app-todo-list>
   </div>
   <app-dialog-form (onAdd)="showDialog($event)">
 

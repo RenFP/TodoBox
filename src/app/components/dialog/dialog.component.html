@@ -3,12 +3,13 @@
       <h3>{{ item.id ? 'Editar tarefa' : 'Adicionar terefa' }}</h3>
   </ng-template>
   <div class="modal-content">
-      <input pInputText [(ngModel)]="item.name" type="text" placeholder="Nome da tarefa" />
+      <input pInputText [(ngModel)]="item.name" type="text" placeholder="Nome da tarefa" [invalid]="item.name && item.name.length < 3"/>
       <div class="time-container">
           <p-datepicker inputId="calendar-timeonly" [(ngModel)]="item.startTask" [timeOnly]="true"
               placeholder="Início da tarefa" [readonlyInput]="true" [showIcon]="true" />
           <p-datepicker inputId="calendar-timeonly" [(ngModel)]="item.endTask" [timeOnly]="true"
-              placeholder="Fim da tarefa" [readonlyInput]="true" [showIcon]="true" />
+              placeholder="Fim da tarefa" [readonlyInput]="true" [showIcon]="true" required="true"
+              [invalid]="this.item.startTask && this.item.endTask && this.item.startTask >= this.item.endTask"/>
       </div>
       <p-datepicker [(ngModel)]="item.dateTask" [inline]="true" [showIcon]="true" inputId="buttondisplay"
           [showOnFocus]="false" selectionMode="range" [readonlyInput]="true" />

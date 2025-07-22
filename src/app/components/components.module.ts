@@ -10,6 +10,8 @@ import { PrimengcomponentsModule } from '../primengcomponents/primengcomponents.
 import { DialogFormComponent } from './dialog-form/dialog-form.component';
 import { PipesModule } from '../pipes/pipes.module';
 import { DialogComponent } from './dialog/dialog.component';    
+import { DateRangePipe } from '../pipes/date-range.pipe';
+
 
 
 

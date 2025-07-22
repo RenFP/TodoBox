@@ -12,4 +12,5 @@ export class TodoListComponent {
   @Output() onCheckedChange = new EventEmitter<number>()
   @Output() onEdit = new EventEmitter<ITodoItem>()  
   @Output() onEditTask = new EventEmitter<ITodoItem>()
+  @Output() onDelete = new EventEmitter<number>()
 }
