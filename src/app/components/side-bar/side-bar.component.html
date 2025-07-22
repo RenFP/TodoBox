@@ -2,20 +2,29 @@
     <h2 class="menu-title">Categoria</h2>
     <div class="menu-list">
 
-        <div class="menu-item" (click)="setFilter('')">
-            <span>O</span>
+        <div 
+  class="menu-item" 
+  [ngClass]="{'menu-item-highlighted': selectedFilter === ''}" 
+  (click)="setFilter('')">
+            <span>🏠</span>
             <span style="flex-grow: 1;">Todos</span>
             <span class="menu-item-counter">{{counter[0]+counter[1]}}</span>
         </div>
-        <div class="menu-item" (click)="setFilter('pending')">
-            <span>O</span>
+        <div 
+  class="menu-item" 
+  [ngClass]="{'menu-item-highlighted': selectedFilter === 'pending'}" 
+  (click)="setFilter('pending')">
+            <span>⌛</span>
             <span style="flex-grow: 1;">Pendentes</span>
             <span class="menu-item-counter">{{counter[0]}}</span>
         </div>
-        <div class="menu-item-highlighted" (click)="setFilter('completed')">
-            <span>O</span>
+        <div 
+  class="menu-item" 
+  [ngClass]="{'menu-item-highlighted': selectedFilter === 'completed'}" 
+  (click)="setFilter('completed')">
+            <span>✅</span>
             <span style="flex-grow: 1;">Finalizados</span>
-            <span class="menu-item-counter-highlighted">{{counter[1]}}</span>
+            <span class="menu-item-counter">{{counter[1]}}</span>
         </div>  
 
     </div>

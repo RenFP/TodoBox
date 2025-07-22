@@ -34,7 +34,8 @@ export class AppComponent {
     this.todoList.push(dados);
     this.updateFilteredList();
   }
-  terminateTask(id: number) {
+  async terminateTask(id: number) {
+    await this.delayAnimation();
     const item = this.todoList.find(item => item.id === id);
     if (item?.status === 'pending') {
       this.todoService.terminateTodoItem(id);
@@ -69,5 +70,11 @@ export class AppComponent {
     });
     this.counter[0] = this.todoList.filter(item => item.status === 'pending').length;
     this.counter[1] = this.todoList.filter(item => item.status === 'completed').length;
+  }
+
+  delayAnimation() {
+    setTimeout(() => {
+      this.updateFilteredList();
+    }, 700);
   }
 }
