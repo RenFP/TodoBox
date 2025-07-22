@@ -10,10 +10,12 @@ import { TodoService } from './data/todoservice';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
+  visible: boolean = false;
   todoList: ITodoItem[] = [];
   todoListFiltered: ITodoItem[] = [];
-  currentFilter: string = 'pending'; // ou o valor padrão desejado
+  currentFilter: string = '';
   counter: [number, number] = [0, 0];
+  selectedItem: ITodoItem = {} as ITodoItem;
   constructor(private todoService: TodoService) {
   }
 
@@ -23,9 +25,13 @@ export class AppComponent {
       this.updateFilteredList();
     });
   }
-
-  addTask(dados: ITodoItem) {
+  showDialog(dados: ITodoItem) {
+    this.selectedItem = dados;
+    this.visible = true
+  }
+  addTask(dados: ITodoItem) {    
     this.todoService.addTodoItem(dados);
+    console.log( dados.dateTask);  //CORRIGIR PIPE DATE
     this.todoList.push(dados);
     this.updateFilteredList();
   }
@@ -33,17 +39,24 @@ export class AppComponent {
     this.todoService.terminateTodoItem(id);
     this.updateFilteredList();
   }
-  toggleDarkMode() {
-    const element = document.querySelector('html');
-    element?.classList.toggle('my-app-dark');
-  }
+  
   filterTodoList(status: string) {
     this.currentFilter = status;
     this.updateFilteredList();
   }
+  editTask(dados: ITodoItem) {    
+    this.todoService.updateTodoItem(dados);
+    this.updateFilteredList();
+  }
 
   updateFilteredList() {
-    this.todoListFiltered = this.todoList.filter(item => item.status === this.currentFilter);
+    this.todoListFiltered = this.todoList.filter(item => {
+      if (this.currentFilter === '') {
+        return item.status === 'pending' || item.status === 'completed';
+      } else {
+        return item.status === this.currentFilter;
+      }
+    });
     this.counter[0] = this.todoList.filter(item => item.status === 'pending').length;
     this.counter[1] = this.todoList.filter(item => item.status === 'completed').length;
   }

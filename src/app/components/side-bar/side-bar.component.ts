@@ -10,7 +10,7 @@ export class SideBarComponent {
   @Output() onFilterTodoList = new EventEmitter<string>();
   @Input() counter: number[] = [0, 0];
 
-  selectedFilter: string = 'pending'; // Valor inicial
+  selectedFilter: string = '';
 
   setFilter(filter: string) {
     this.selectedFilter = filter;

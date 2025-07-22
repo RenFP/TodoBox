@@ -10,4 +10,6 @@ import { ITodoItem } from '../../interfaces/todoitem';
 export class TodoListComponent {
   @Input() todoList: ITodoItem[] = [];
   @Output() onCheckedChange = new EventEmitter<number>()
+  @Output() onEdit = new EventEmitter<ITodoItem>()  
+  @Output() onEditTask = new EventEmitter<ITodoItem>()
 }

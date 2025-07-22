@@ -3,9 +3,12 @@
     <app-side-bar (onFilterTodoList)="filterTodoList($event)" [counter]="counter"></app-side-bar>
   </div>
   <div class="right-container">
-    <button (click)="toggleDarkMode()">Toggle Dark Mode</button>
+
     <app-header></app-header>
-    <app-todo-list [todoList]="todoListFiltered" (onCheckedChange)="terminateTask($event)"></app-todo-list>
+    <app-todo-list [todoList]="todoListFiltered" (onCheckedChange)="terminateTask($event)" (onEdit)="showDialog($event)"></app-todo-list>
   </div>
-  <app-dialog-form (onAddTask)="addTask($event)"></app-dialog-form>
+  <app-dialog-form (onAdd)="showDialog($event)">
+
+  </app-dialog-form>
+  <app-dialog [visible]="visible" (visibleChange)="visible = $event" (onAddTask)="addTask($event)" (onEditTask)="editTask($event)" [item]="selectedItem"></app-dialog>
 </main>

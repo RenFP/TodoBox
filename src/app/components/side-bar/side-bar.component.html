@@ -2,6 +2,11 @@
     <h2 class="menu-title">Categoria</h2>
     <div class="menu-list">
 
+        <div class="menu-item" (click)="setFilter('')">
+            <span>O</span>
+            <span style="flex-grow: 1;">Todos</span>
+            <span class="menu-item-counter">{{counter[0]+counter[1]}}</span>
+        </div>
         <div class="menu-item" (click)="setFilter('pending')">
             <span>O</span>
             <span style="flex-grow: 1;">Pendentes</span>

@@ -9,6 +9,13 @@ import { ITodoItem } from '../../interfaces/todoitem';
   styleUrls: ['./todo-item.component.css'],
 })
 export class TodoItemComponent {
-  @Input() todoItem: ITodoItem | undefined = undefined;
+  visible: any;
+  @Input() todoItem: ITodoItem = {} as ITodoItem;
   @Output() onCheckedChange = new EventEmitter<number>()
+  @Output() onEdit = new EventEmitter<ITodoItem>()
+
+  showDialog(item?: ITodoItem) {
+    this.visible = true;    
+  }
+  
 }

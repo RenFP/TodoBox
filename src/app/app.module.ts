@@ -10,9 +10,11 @@ import Aura from '@primeuix/themes/aura';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
+
   ],
   imports: [
     BrowserModule,

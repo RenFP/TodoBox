@@ -1,5 +1,3 @@
-
-
 export interface ITodoItem {
   id?: number | undefined;
   name: string | undefined;

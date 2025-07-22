@@ -7,7 +7,7 @@ import { ITodoItem } from "../interfaces/todoitem";
 export class TodoService {
     data: ITodoItem[] = []
 
-    idCount = this.data.length;
+    idCount = 1;
 
     getTodoList() {
         return new Promise((resolve) => {

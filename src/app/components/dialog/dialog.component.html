@@ -1,0 +1,18 @@
+<p-dialog class="modal-container" [(visible)]="visible" (visibleChange)="visibleChange.emit($event)" [modal]="true" [style]="{ width: '23rem' }">
+  <ng-template #header>
+      <h3>{{ item.id ? 'Editar tarefa' : 'Adicionar terefa' }}</h3>
+  </ng-template>
+  <div class="modal-content">
+      <input pInputText [(ngModel)]="item.name" type="text" placeholder="Nome da tarefa" />
+      <div class="time-container">
+          <p-datepicker inputId="calendar-timeonly" [(ngModel)]="item.startTask" [timeOnly]="true"
+              placeholder="Início da tarefa" [readonlyInput]="true" [showIcon]="true" />
+          <p-datepicker inputId="calendar-timeonly" [(ngModel)]="item.endTask" [timeOnly]="true"
+              placeholder="Fim da tarefa" [readonlyInput]="true" [showIcon]="true" />
+      </div>
+      <p-datepicker [(ngModel)]="item.dateTask" [inline]="true" [showIcon]="true" inputId="buttondisplay"
+          [showOnFocus]="false" selectionMode="range" [readonlyInput]="true" />
+      <app-button *ngIf="!item.id" (click)="addTask()" btnName="Adicionar" color="blue" />
+      <app-button *ngIf="item.id" (click)="editTask()" btnName="Editar" color="blue" />
+  </div>
+</p-dialog>

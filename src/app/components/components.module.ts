@@ -9,6 +9,8 @@ import { CheckboxComponent } from './checkbox/checkbox.component';
 import { PrimengcomponentsModule } from '../primengcomponents/primengcomponents.module';
 import { DialogFormComponent } from './dialog-form/dialog-form.component';
 import { PipesModule } from '../pipes/pipes.module';
+import { DialogComponent } from './dialog/dialog.component';    
+
 
 
 @NgModule({
@@ -20,6 +22,7 @@ import { PipesModule } from '../pipes/pipes.module';
     ButtonComponent,
     CheckboxComponent,
     DialogFormComponent,
+    DialogComponent,
   ],
   imports: [CommonModule, PrimengcomponentsModule, PipesModule],
   exports: [
@@ -29,8 +32,9 @@ import { PipesModule } from '../pipes/pipes.module';
     HeaderComponent,
     ButtonComponent,
     CheckboxComponent,
-    DialogFormComponent
+    DialogFormComponent,
+    DialogComponent,  
   ],
-})
+})  
 export class ComponentsModule { }
 

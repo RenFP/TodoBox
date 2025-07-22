@@ -1,6 +1,7 @@
-<button class="button-area" (click)="showDialog()" label="Show"><span>&#x002B;</span></button>
+<button class="button-area" (click)="onAdd.emit($event)" label="Show"><span>&#x002B;</span></button>
 
-<p-dialog class="modal-container" [(visible)]="visible" [modal]="true" [style]="{ width: '23rem' }">
+
+<!-- <p-dialog class="modal-container" [(visible)]="visible" [modal]="true" [style]="{ width: '23rem' }">
     <ng-template #header>
         <h3>Adicione uma Tarefa</h3>
     </ng-template>
@@ -16,4 +17,4 @@
             [showOnFocus]="false" selectionMode="range" [readonlyInput]="true" />
         <app-button (click)="addTask()" btnName="Adicionar" color="blue" />
     </div>
-</p-dialog>
+</p-dialog> -->
