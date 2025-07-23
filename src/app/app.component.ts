@@ -1,5 +1,4 @@
 import { Component, inject } from '@angular/core';
-import { GetTodoList } from './data/todoslist';
 import { ITodoItem } from './interfaces/todoitem';
 import { TodoService } from './data/todoservice';
 

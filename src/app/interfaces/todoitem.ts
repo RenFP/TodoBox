@@ -1,9 +1,8 @@
 export interface ITodoItem {
-  id?: number | undefined;
+  id: number | undefined;
   name: string | undefined;
   dateTask: string | undefined;
   startTask: Date | undefined;
   endTask: Date | undefined;
-  status?: string | undefined;
-  emojiTask: string | undefined;
+  status: string | undefined;
 }

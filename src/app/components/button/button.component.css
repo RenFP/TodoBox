@@ -7,8 +7,6 @@
     border-radius: 5px;    
     font-weight: 500;
 }
-
-
 .btn.blue{    
     background-color: #1550F7;  
     color: #FFFFFF;
@@ -17,9 +15,7 @@
     background-color: #FFFFFF; 
     color: #333333; 
     border: 1px solid #d3d3d3;
-    
 }
-
 .btn:hover {
 opacity: 90%;
 
