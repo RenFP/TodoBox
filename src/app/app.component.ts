@@ -11,7 +11,25 @@ import { TodoService } from './data/todoservice';
 export class AppComponent {
   visible: boolean = false;
   todoList: ITodoItem[] = [];
-  todoListFiltered: ITodoItem[] = [];
+  mockTodo: ITodoItem[] = [
+    {
+      id: 1,
+      name: 'Finalizar relatório',
+      dateTask: [new Date('2025-07-24'),new Date('2025-07-27')],
+      startTask: new Date('2025-07-24T09:00:00'),
+      endTask: new Date('2025-07-24T11:00:00'),
+      status: 'Em andamento',
+    },
+    {
+      id: 2,
+      name: 'Reunião com equipe',
+      dateTask: [new Date('2025-07-24'),new Date('2025-07-27')],
+      startTask: new Date('2025-07-24T14:00:00'),
+      endTask: new Date('2025-07-24T15:00:00'),
+      status: 'Pendente',
+    },
+  ];
+  todoListFiltered: ITodoItem[] = this.mockTodo  // []
   currentFilter: string = '';
   counter: [number, number] = [0, 0];
   selectedItem: ITodoItem = {} as ITodoItem;
@@ -20,7 +38,7 @@ export class AppComponent {
   ngOnInit() {
     this.todoService.getTodoList().then((data) => {
       this.todoList = data as ITodoItem[];
-      this.updateFilteredList();
+      ///this.updateFilteredList();
     });
   }
   showDialog(dados: ITodoItem) {

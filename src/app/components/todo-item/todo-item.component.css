@@ -12,9 +12,7 @@
   justify-content: space-between;
   padding: 0px 10px;
   vertical-align: super;
-    
 }
-
 
 .task-name {
   flex-grow: 1;
@@ -61,4 +59,20 @@
 .todo-item:hover {
   transform: scalex(1.005);
   background-color: rgb(17, 154, 233);
+}
+
+@media (max-width: 550px) {
+  .time-task {
+    background-color: #f3f3f3;
+    padding: 0px 0px;
+    border-radius: 6px;
+    color: #666666;
+  }
+  .todo-item {
+    display: flex;
+    gap: 2px;
+  }
+  .time-task .dash {    
+    display: none;
+  }
 }
