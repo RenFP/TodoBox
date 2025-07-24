@@ -15,8 +15,7 @@ export class AppComponent {
   currentFilter: string = '';
   counter: [number, number] = [0, 0];
   selectedItem: ITodoItem = {} as ITodoItem;
-  constructor(private todoService: TodoService) {
-  }
+  constructor(private todoService: TodoService) {}
 
   ngOnInit() {
     this.todoService.getTodoList().then((data) => {
@@ -26,24 +25,25 @@ export class AppComponent {
   }
   showDialog(dados: ITodoItem) {
     this.selectedItem = dados;
-    this.visible = true
+    this.visible = true;
   }
   addTask(dados: ITodoItem) {
     this.todoService.addTodoItem(dados);
     this.todoList.push(dados);
     this.updateFilteredList();
   }
-  async terminateTask(id: number) {
-    await this.delayAnimation();
-    const item = this.todoList.find(item => item.id === id);
-    if (item?.status === 'pending') {
-      this.todoService.terminateTodoItem(id);
-      this.updateFilteredList();
-    } else {
-      item!.status = 'pending';
-      this.todoService.updateTodoItem(item!);
-      this.updateFilteredList();
-    }
+  terminateTask(id: number) {
+    const item = this.todoList.find((item) => item.id === id);
+    setTimeout(() => {
+      if (item?.status === 'pending') {
+        this.todoService.terminateTodoItem(id);
+        this.updateFilteredList();
+      } else {
+        item!.status = 'pending';
+        this.todoService.updateTodoItem(item!);
+        this.updateFilteredList();
+      }
+    }, 300);
   }
   deleteTask(id: number) {
     this.todoService.deleteTodoItem(id);
@@ -60,20 +60,20 @@ export class AppComponent {
   }
 
   updateFilteredList() {
-    this.todoListFiltered = this.todoList.filter(item => {
+    this.todoListFiltered = this.todoList.filter((item) => {
       if (this.currentFilter === '') {
         return item.status === 'pending' || item.status === 'completed';
       } else {
         return item.status === this.currentFilter;
       }
     });
-    this.counter[0] = this.todoList.filter(item => item.status === 'pending').length;
-    this.counter[1] = this.todoList.filter(item => item.status === 'completed').length;
+    this.counter[0] = this.todoList.filter(
+      (item) => item.status === 'pending'
+    ).length;
+    this.counter[1] = this.todoList.filter(
+      (item) => item.status === 'completed'
+    ).length;
   }
 
-  delayAnimation() {
-    setTimeout(() => {
-      this.updateFilteredList();
-    }, 700);
-  }
+  delayAnimation() {}
 }

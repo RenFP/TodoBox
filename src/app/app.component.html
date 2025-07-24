@@ -3,12 +3,17 @@
     <app-side-bar (onFilterTodoList)="filterTodoList($event)" [counter]="counter"></app-side-bar>
   </div>
   <div class="right-container">
-
     <app-header></app-header>
-    <app-todo-list [todoList]="todoListFiltered" (onCheckedChange)="terminateTask($event)" (onEdit)="showDialog($event)" (onDelete)="deleteTask($event)"></app-todo-list>
+    
+    <router-outlet>
+      <app-todo-list [todoList]="todoListFiltered" (onCheckedChange)="terminateTask($event)"
+        (onEdit)="showDialog($event)" (onDelete)="deleteTask($event)" />
+    </router-outlet>
+    
   </div>
   <app-dialog-form (onAdd)="showDialog($event)">
 
   </app-dialog-form>
-  <app-dialog [visible]="visible" (visibleChange)="visible = $event" (onAddTask)="addTask($event)" (onEditTask)="editTask($event)" [item]="selectedItem"></app-dialog>
+  <app-dialog [visible]="visible" (visibleChange)="visible = $event" (onAddTask)="addTask($event)"
+    (onEditTask)="editTask($event)" [item]="selectedItem"></app-dialog>
 </main>

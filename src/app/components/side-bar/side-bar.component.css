@@ -5,7 +5,6 @@
   flex-direction: column;
   padding: 0 20px;
   cursor: pointer;
-  
 }
 
 .menu-title {
@@ -24,6 +23,7 @@
   padding: 0 10px;
   font-weight: 500;
   font-size: 15px;
+  
 }
 .menu-item-counter {
   background-color: #f3f3f3;
@@ -31,6 +31,7 @@
   border-radius: 14px;
   color: #666666;
   font-weight: 500;
+  margin-left: 5px;
 }
 .menu-item:hover {
   display: flex;
@@ -66,3 +67,90 @@
   color: #666666;
   font-weight: 500;
 }
+.menu-item-highlighted:hover {
+    background-color: #2023e6;
+  }
+
+@media (max-width: 800px) {
+  h2 {
+    display: none;
+  }
+
+  .category-menu {
+    padding: 0 0px;
+  }
+  .category-menu {
+    display: flex;
+    flex-direction: row;
+  }
+  .menu-list {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+    padding: 0 5px;
+  }
+  .menu-item {
+    background-color: rgb(233, 233, 233);
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    border-radius: 5px;
+  }
+  .menu-item-highlighted {
+    background-color: #204ee6;
+  }
+  .menu-item-highlighted:hover {
+    background-color: #2023e6;
+  }
+  .menu-item-counter-highlighted {
+    background-color: #ffffff;
+    padding: 2px 10px;
+    border-radius: 14px;
+    color: #666666;
+    font-weight: 500;
+    
+  }
+}
+
+@media (max-width: 550px) {
+  .category-menu{
+    padding: 0 2px;    
+  }
+  .menu-item {    
+    background-color: rgb(233, 233, 233);
+    display: flex;
+    flex-direction: column;
+    height: 60px;    
+  }
+  .menu-item:hover {    
+    background-color: #f3f3f3;
+    display: flex;
+    flex-direction: column;
+    height: 60px;    
+  }
+  .menu-item-highlighted {    
+    background-color: #204ee6;
+    display: flex;
+    flex-direction: column;
+    height: 60px;    
+  }
+  .menu-item-highlighted:hover {    
+    background-color: #204ee6;
+    height: 60px;
+      
+  }
+  .menu-list {
+    width: 100%;
+    margin: 0;    
+    padding: 2px 0;    
+  }  
+  .menu-item-counter{
+    margin-left: 2px;
+  }
+  .menu-item-highlighted{
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+

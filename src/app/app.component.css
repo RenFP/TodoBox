@@ -6,7 +6,6 @@
   display: flex;
   justify-content: space-between;
   padding: 8px;
-  
 }
 .left-container {
   box-sizing: border-box;
@@ -16,7 +15,6 @@
   overflow: hidden;
   background-color: #ffffff;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-   
 }
 .right-container {
   display: flex;
@@ -24,4 +22,20 @@
   width: 80%;
   padding: 0 6%;
   overflow: hidden;
+}
+
+@media (max-width: 800px) {
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+  }
+  .left-container{
+    width: 100%;
+    height: 70px;     
+  }
+  .right-container{
+    width: 100%;
+    margin-top: 20px;
+   }
 }
